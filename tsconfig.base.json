@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-test/testv15/json-placeholder/data-access": [
+        "libs/testv15/json-placeholder/data-access/src/index.ts"
+      ],
+      "@my-test/testv15/json-placeholder/feature": [
+        "libs/testv15/json-placeholder/feature/src/index.ts"
+      ],
+      "@my-test/testv15/shell": ["libs/testv15/shell/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
