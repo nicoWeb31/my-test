@@ -1,10 +1,15 @@
+import { provideHttpClient } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
 
 import { provideRouter } from '@angular/router';
+import { POSTS_STATE_NAME } from '@my-test/testv15/json-placeholder/data-access';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { PostsEffects } from 'libs/testv15/json-placeholder/data-access/src/lib/state/posts.effects';
+import { postsReducer } from 'libs/testv15/json-placeholder/data-access/src/lib/state/posts.reducer';
 import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
 
 // if (environment.production) {
 //   enableProdMode();
@@ -12,29 +17,10 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter([
-      {
-        path: '',
-        loadComponent: () =>
-          import('@my-test/testv15/shell').then((c) => c.Testv15ShellComponent),
-        children: [
-          {
-            path: '',
-            pathMatch: 'full',
-            redirectTo: 'json-placeholder',
-          },
-          {
-            path: 'json-placeholder',
-            loadComponent: () =>
-              import('@my-test/testv15/json-placeholder/feature').then(
-                (c) => c.Testv15JsonPlaceholderFeatureComponent
-              ),
-          },
-        ],
-      },
-    ]),
-    provideStore({ }),
+    provideRouter(routes),
+    provideEffects([]),
+    provideHttpClient(),
+    provideStore({}),
     provideStoreDevtools(),
-    provideEffects(),
   ],
 }).catch((err) => console.error(err));

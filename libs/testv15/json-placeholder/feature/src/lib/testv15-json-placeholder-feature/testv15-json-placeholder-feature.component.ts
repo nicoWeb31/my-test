@@ -1,24 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Testv15JsonPlaceholderDataAccessModule } from '@my-test/testv15/json-placeholder/data-access';
-import { JsonPlaceholderService } from 'libs/testv15/json-placeholder/data-access/src/lib/service/json-placeholder.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
+import {
+  JsonPlaceholderService,
+  postsActions,
+  postsSelector,
+  Testv15JsonPlaceholderDataAccessModule,
+} from '@my-test/testv15/json-placeholder/data-access';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'my-test-testv15-json-placeholder-feature',
   standalone: true,
-  imports: [CommonModule, Testv15JsonPlaceholderDataAccessModule],
+  imports: [NgFor, AsyncPipe, JsonPipe, Testv15JsonPlaceholderDataAccessModule],
   template: `
     <p>testv15-json-placeholder-feature works!</p>
-    {{ posts$ | async | json }}
+    <!-- {{ posts$ | async | json }} -->
+    <div *ngFor="let item of posts$ | async">{{ item.title }}</div>
   `,
   styles: [],
 })
 export class Testv15JsonPlaceholderFeatureComponent implements OnInit {
-  posts$ = this.placeHolderService.post$;
-
-  constructor(private placeHolderService: JsonPlaceholderService) {}
+  placeHolderService = inject(JsonPlaceholderService);
+  store = inject(Store);
+  posts$ = this.store.select(postsSelector);
 
   ngOnInit(): void {
-    console.log('test');
+    this.store.dispatch(postsActions.start());
   }
 }
