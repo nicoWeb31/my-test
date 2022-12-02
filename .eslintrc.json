@@ -13,8 +13,22 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:testv15",
+                "onlyDependOnLibsWithTags": ["scope:testv15", "scope:shared"]
+              },
+
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:data-access",
+                  "type:utils",
+                  "type:ui",
+                  "type:feature"
+                ]
               }
             ]
           }
