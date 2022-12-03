@@ -7,8 +7,8 @@ import { RouterLinkWithHref } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLinkWithHref],
   template: `
-    <header>
-      <a [routerLink]="['/json-placeholder']">json PlaceHolder</a>
+    <header class="w-full h-10 bg-slate-400 flex items-center justify-evenly">
+      <a [routerLink]="['/json-placeholder']" class="">json PlaceHolder</a>
       <a [routerLink]="['cat-fact']">cat fact</a>
     </header>
   `,
