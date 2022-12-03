@@ -1,15 +1,15 @@
 {
-  "name": "testv15-json-placeholder-data-access",
+  "name": "testv15-catfact-feature",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/testv15/json-placeholder/data-access/src",
+  "sourceRoot": "libs/testv15/catfact/feature/src",
   "prefix": "my-test",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/testv15/json-placeholder/data-access/jest.config.ts",
+        "jestConfig": "libs/testv15/catfact/feature/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -17,11 +17,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/testv15/json-placeholder/data-access/**/*.ts",
-          "libs/testv15/json-placeholder/data-access/**/*.html"
+          "libs/testv15/catfact/feature/**/*.ts",
+          "libs/testv15/catfact/feature/**/*.html"
         ]
       }
     }
   },
-  "tags": ["scope:testv15", "type:data-access"]
+  "tags": ["scope:testv15", "type:feature"]
 }

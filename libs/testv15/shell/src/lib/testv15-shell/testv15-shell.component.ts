@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-
-
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @Component({
   selector: 'my-test-testv15-shell',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FooterComponent, HeaderComponent],
   template: `
     <div>
-      <p>testv15-shell works! toto</p>
-    </div>
-    <div>
-      router :
-      <router-outlet></router-outlet>
+      <my-test-header></my-test-header>
+
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      <my-test-footer></my-test-footer>
     </div>
   `,
   styles: [],
