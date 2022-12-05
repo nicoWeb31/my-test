@@ -1,5 +1,6 @@
-import { Routes } from "@angular/router";
-import { Testv15CatfactFeatureComponent } from "./testv15-catfact-feature.component";
+import { Routes } from '@angular/router';
+import { MathService } from '@my-test/shared/math/utils';
+import { Testv15CatfactFeatureComponent } from './testv15-catfact-feature.component';
 
 export const JSON_PL_ROUTES: Routes = [
   // {
@@ -10,9 +11,6 @@ export const JSON_PL_ROUTES: Routes = [
   {
     path: '',
     component: Testv15CatfactFeatureComponent,
-    // providers: [
-    //   provideState(POSTS_STATE_NAME, postsReducer),
-    //   provideEffects(PostsEffects),
-    // ],
+    providers: [],// replace provide module 
   },
 ];

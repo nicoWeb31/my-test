@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@my-test/shared/math/utils": ["libs/shared/math/utils/src/index.ts"],
       "@my-test/testv15/catfact/data-access": [
         "libs/testv15/catfact/data-access/src/index.ts"
       ],
