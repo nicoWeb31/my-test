@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { catsActions, catsBreedsActions } from './cat-action';
+import { catsBreedsActions } from './cat-action';
 import { initialCatsState } from './cat-state';
 
 export const catsReducer = createReducer(

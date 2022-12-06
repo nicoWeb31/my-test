@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
 
 import { map, mergeMap, tap } from 'rxjs';
 import { JsonPlaceholderService } from '../service/json-placeholder.service';
