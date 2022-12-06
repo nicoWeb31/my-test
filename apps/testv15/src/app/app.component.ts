@@ -1,11 +1,12 @@
+import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'my-test-root',
   standalone: true,
   template: `<router-outlet></router-outlet>`,
-  imports : [RouterModule],
+  imports : [RouterModule,RouterOutlet],
 
 })
 export class AppComponent {

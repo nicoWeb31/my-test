@@ -1,11 +1,6 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { JsonPlaceholderService } from './service/json-placeholder.service';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { POSTS_STATE_NAME } from './state/posts.selector';
-import { postsReducer } from './state/posts.reducer';
-import { PostsEffects } from './state/posts.effects';
 
 @NgModule({
   imports: [
