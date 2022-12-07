@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { catsBreedsActions } from './cat-action';
-import { initialCatsState } from './cat-state';
+import { catsBreedsActions } from '../cat-action';
+import { initialCatsState } from '../cat-state';
 
 export const catsReducer = createReducer(
   initialCatsState,

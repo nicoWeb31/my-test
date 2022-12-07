@@ -1,8 +1,15 @@
 import { Routes } from '@angular/router';
+import {
+  CatsEffects,
+  catsReducer,
+  CATS_STATE_NAME,
+} from '@my-test/testv15/catfact/data-access';
+import { provideEffects } from '@ngrx/effects';
+import { provideState } from '@ngrx/store';
 
 import { Testv15CatfactFeatureComponent } from './testv15-catfact-feature.component';
 
-export const JSON_PL_ROUTES: Routes = [
+export const CATS_ROUTES: Routes = [
   // {
   //   path: '',
   //   pathMatch: 'full',
@@ -11,6 +18,9 @@ export const JSON_PL_ROUTES: Routes = [
   {
     path: '',
     component: Testv15CatfactFeatureComponent,
-    providers: [],// replace provide module 
+    providers: [
+      provideState(CATS_STATE_NAME, catsReducer),
+      provideEffects(CatsEffects),
+    ],
   },
 ];

@@ -16,9 +16,7 @@ export const SHELL_ROUTES: Routes = [
       {
         path: 'cat-fact',
         loadChildren: () =>
-          import('@my-test/testv15/catfact/feature').then(
-            (r) => r.JSON_PL_ROUTES
-          ),
+          import('@my-test/testv15/catfact/feature').then((r) => r.CATS_ROUTES),
       },
     ],
   },
