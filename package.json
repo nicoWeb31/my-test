@@ -9,6 +9,7 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js",
     "start": "nx serve",
+    "test:all": "nx run-many --target=test --all",
     "build": "nx build",
     "test": "nx test"
   },

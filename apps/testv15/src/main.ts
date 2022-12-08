@@ -1,7 +1,7 @@
 import { provideHttpClient } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
 
-import { provideRouter } from '@angular/router';
+import { provideRouter, withDebugTracing } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
@@ -14,7 +14,7 @@ import { routes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes,withDebugTracing()),
     provideEffects([]),
     provideHttpClient(),
     provideStore({}),
