@@ -1,11 +1,11 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
+import {
+  postsSelector
+} from '@my-test/testv15/json-placeholder/data-access';
+import { MemoizedSelector } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Testv15JsonPlaceholderFeatureComponent } from './testv15-json-placeholder-feature.component';
-import { provideAutoSpy, Spy } from 'jest-auto-spies';
-import { SpawnSyncOptions } from 'child_process';
-import { Store, StoreModule } from '@ngrx/store';
-
 // https://timothycurchod.com/writings/testing-ngrx
 // https://medium.com/@bo.vandersteene/mock-your-ngrx-store-on-the-easy-way-68c66d4bea63
 //https://www.youtube.com/watch?v=Jw4WEIBmiDU
@@ -13,26 +13,35 @@ import { Store, StoreModule } from '@ngrx/store';
 describe('Testv15JsonPlaceholderFeatureComponent', () => {
   let component: Testv15JsonPlaceholderFeatureComponent;
   let fixture: ComponentFixture<Testv15JsonPlaceholderFeatureComponent>;
-  let postSpyStore: Spy<Store>;
-  let store: Store;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let mockStore: MockStore<any>;
+  let mockSelector: MemoizedSelector<any, any>;
+  const initialState = {
+    posts: [],
+    error: '',
+  };
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [
         Testv15JsonPlaceholderFeatureComponent,
         HttpClientTestingModule,
-        StoreModule.forRoot({})
       ],
       providers: [
-        // provideMockStore({}),
+        provideMockStore({
+          initialState,
+          selectors: [
+            // {selector : posts, value : ['a']}
+          ],
+        }),
         // provideAutoSpy(Store),
-        
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Testv15JsonPlaceholderFeatureComponent);
     component = fixture.componentInstance;
-    store = TestBed.inject<any>(Store);
+    mockStore = TestBed.inject(MockStore);
+    mockSelector = mockStore.overrideSelector(postsSelector, []);
     fixture.detectChanges();
   });
 
@@ -52,5 +61,50 @@ describe('Testv15JsonPlaceholderFeatureComponent', () => {
     expect(p).toBeFalsy();
   });
 
-  it('should return post$', () => {});
+  it('store should return list of post$ empty', (done) => {
+    component.store.subscribe((store) => {
+      console.log('posts', store.posts.length);
+      expect(store.posts.length).toEqual(0);
+      done();
+    });
+    //TODO:
+  });
+
+  it('store should return list of post$', (done) => {
+    component.store.subscribe((store) => {
+      expect(store.posts.length).toBe(0);
+    });
+
+    const newMockState = {
+      ...initialState,
+      posts: ['a'],
+    };
+    mockStore.setState(newMockState);
+
+    component.store.subscribe((store) => {
+      expect(store.posts.length).toBe(1);
+    });
+    done();
+  });
+
+  it('selector should return list of post$ empty', (done) => {
+    component.posts$.subscribe((posts) => {
+      console.log('posts', posts);
+      expect(posts.length).toEqual(0);
+      done();
+    });
+    //TODO:
+  });
+  it('selector should return list of post$', (done) => {
+    mockSelector.setResult(['a', 'b', 'c']); //maj selector values
+    fixture.detectChanges();
+    mockStore.refreshState();
+
+    component.posts$.subscribe((posts) => {
+      console.log('posts', posts);
+      expect(posts.length).toEqual(3);
+      done();
+    });
+    //TODO:
+  });
 });
