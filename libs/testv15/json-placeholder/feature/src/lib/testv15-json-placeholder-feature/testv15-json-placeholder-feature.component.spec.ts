@@ -31,10 +31,8 @@ describe('Testv15JsonPlaceholderFeatureComponent', () => {
         provideMockStore({
           initialState,
           selectors: [
-            // {selector : posts, value : ['a']}
           ],
         }),
-        // provideAutoSpy(Store),
       ],
     }).compileComponents();
 
@@ -67,7 +65,6 @@ describe('Testv15JsonPlaceholderFeatureComponent', () => {
       expect(store.posts.length).toEqual(0);
       done();
     });
-    //TODO:
   });
 
   it('store should return list of post$', (done) => {
@@ -93,7 +90,6 @@ describe('Testv15JsonPlaceholderFeatureComponent', () => {
       expect(posts.length).toEqual(0);
       done();
     });
-    //TODO:
   });
   it('selector should return list of post$', (done) => {
     mockSelector.setResult(['a', 'b', 'c']); //maj selector values
@@ -105,6 +101,5 @@ describe('Testv15JsonPlaceholderFeatureComponent', () => {
       expect(posts.length).toEqual(3);
       done();
     });
-    //TODO:
   });
 });
