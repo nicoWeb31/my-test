@@ -30,8 +30,6 @@ describe('Testv15JsonPlaceholderFeatureComponent', () => {
       providers: [
         provideMockStore({
           initialState,
-          selectors: [
-          ],
         }),
       ],
     }).compileComponents();
