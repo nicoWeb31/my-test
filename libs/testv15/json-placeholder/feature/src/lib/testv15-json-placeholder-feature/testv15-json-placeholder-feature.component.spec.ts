@@ -1,5 +1,4 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { postsSelector } from '@my-test/testv15/json-placeholder/data-access';
 import { MemoizedSelector } from '@ngrx/store';

@@ -18,6 +18,13 @@ export const SHELL_ROUTES: Routes = [
         loadChildren: () =>
           import('@my-test/testv15/catfact/feature').then((r) => r.CATS_ROUTES),
       },
+      {
+        path: 'spectator',
+        loadChildren: () =>
+          import('@my-test/testv15/spectator/feature').then(
+            (r) => r.SPECTATOR_PL_ROUTES
+          ),
+      },
     ],
   },
 ];

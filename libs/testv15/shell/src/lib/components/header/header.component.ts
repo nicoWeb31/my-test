@@ -10,6 +10,7 @@ import { RouterLinkWithHref } from '@angular/router';
     <header class="w-full h-10 bg-slate-400 flex items-center justify-evenly">
       <a [routerLink]="['/json-placeholder']" class="">json PlaceHolder</a>
       <a [routerLink]="['cat-fact']">cat fact</a>
+      <a [routerLink]="['spectator']">spectator</a>
     </header>
   `,
   styles: [],
