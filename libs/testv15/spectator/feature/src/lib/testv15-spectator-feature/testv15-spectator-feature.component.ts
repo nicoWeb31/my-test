@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="tata toto">hello</div>
-    <p>testv15-spectator-feature works!</p>
+    <p class="p">testv15-spectator-feature works!</p>
   `,
   styles: [],
 })

@@ -22,6 +22,11 @@ describe('Testv15SpectatorFeatureComponent', () => {
   });
 
   it('div should have class by toto', () => {
-    expect(spectator.query('div')?.className).toBe('toto tata');
+    expect(spectator.query('div')?.className).toBe('tata toto');
+  });
+  it('div should have class by toto', () => {
+    expect(spectator.query('.p')?.textContent).toBe(
+      'testv15-spectator-feature works!'
+    );
   });
 });
