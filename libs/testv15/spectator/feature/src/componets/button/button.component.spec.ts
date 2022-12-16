@@ -10,12 +10,18 @@ describe('ButtonComponent', () => {
     spectator = createHost(
       `
       <div>
-      <my-test-button></my-test-button>
+      <h1>toto</h1>
+      <my-test-button [btnName]='title'>toto</my-test-button>
       </div>
       `,
+      {
+        hostProps: {
+          btnName: 'toto'
+        }
+      }
     );
-    console.log('', spectator);
-    expect(spectator.query('div')).toBeTruthy();
+    // console.log('', spectator);
+    expect(spectator.query('.my-test-button__btnName')).toHaveText('toto');
   });
 
   // it('should create', () => {
