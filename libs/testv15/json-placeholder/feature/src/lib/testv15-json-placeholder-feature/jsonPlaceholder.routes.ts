@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
 import {
+  myToken,
   PostsEffects,
   postsReducer,
   POSTS_STATE_NAME,
+  someTest,
 } from '@my-test/testv15/json-placeholder/data-access';
 import { provideEffects } from '@ngrx/effects';
 import { provideState } from '@ngrx/store';
@@ -20,6 +22,7 @@ export const JSON_PL_ROUTES: Routes = [
     providers: [
       provideState(POSTS_STATE_NAME, postsReducer),
       provideEffects(PostsEffects),
+      { provide: myToken, useValue: someTest }
     ],
   },
 ];

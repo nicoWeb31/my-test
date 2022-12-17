@@ -1,4 +1,6 @@
+import { EnvironmentInjector, importProvidersFrom } from '@angular/core';
 import { Routes } from '@angular/router';
+import { SharedMath2UtilsModule } from '@my-test/shared/math2/utils';
 import {
   CatsEffects,
   catsReducer,
@@ -19,6 +21,7 @@ export const CATS_ROUTES: Routes = [
     path: '',
     component: Testv15CatfactFeatureComponent,
     providers: [
+      importProvidersFrom(SharedMath2UtilsModule.forTest(4)),
       provideState(CATS_STATE_NAME, catsReducer),
       provideEffects(CatsEffects),
     ],
