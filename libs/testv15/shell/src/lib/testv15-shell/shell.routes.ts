@@ -25,6 +25,13 @@ export const SHELL_ROUTES: Routes = [
             (r) => r.SPECTATOR_PL_ROUTES
           ),
       },
+      {
+        path: 'directiveComp',
+        loadComponent: () =>
+          import('@my-test/testv15/directive-composition/feature').then(
+            (c) => c.Testv15DirectiveCompositionFeatureComponent
+          ),
+      },
     ],
   },
 ];

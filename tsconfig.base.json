@@ -24,6 +24,9 @@
       "@my-test/testv15/catfact/feature": [
         "libs/testv15/catfact/feature/src/index.ts"
       ],
+      "@my-test/testv15/directive-composition/feature": [
+        "libs/testv15/directive-composition/feature/src/index.ts"
+      ],
       "@my-test/testv15/json-placeholder/data-access": [
         "libs/testv15/json-placeholder/data-access/src/index.ts"
       ],

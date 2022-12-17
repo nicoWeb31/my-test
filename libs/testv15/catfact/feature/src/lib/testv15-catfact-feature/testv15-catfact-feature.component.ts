@@ -24,7 +24,6 @@ export class Testv15CatfactFeatureComponent implements OnInit {
   catBreeds$!: Observable<BreedsInterface[]>;
   constructor(private mathService: MathService, private store: Store) {}
   ngOnInit(): void {
-    console.log('math', this.math2);
     this.store.dispatch(catsBreedsActions.start());
     this.catBreeds$ = this.store.select(catsBreedsSelector);
     this.num = this.mathService.addFromCaller(10);

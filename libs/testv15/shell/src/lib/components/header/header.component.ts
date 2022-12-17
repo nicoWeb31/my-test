@@ -11,6 +11,7 @@ import { RouterLinkWithHref } from '@angular/router';
       <a [routerLink]="['/json-placeholder']" class="">json PlaceHolder</a>
       <a [routerLink]="['cat-fact']">cat fact</a>
       <a [routerLink]="['spectator']">spectator</a>
+      <a [routerLink]="['directiveComp']">directive composition</a>
     </header>
   `,
   styles: [],
