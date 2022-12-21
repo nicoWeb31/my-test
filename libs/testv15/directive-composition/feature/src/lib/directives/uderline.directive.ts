@@ -1,19 +1,28 @@
-import { Directive, ElementRef, HostListener, inject } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  inject,
+  Input,
+} from '@angular/core';
 
 @Directive({
-  selector: '[myTestUderline]',
-  standalone: true
+  selector: '[myTestUnderline]',
+  standalone: true,
 })
-export class UderlineDirective {
+export class UnderlineDirective {
+  @Input() color = 'red';
   htmlElement = inject(ElementRef<HTMLElement>);
 
   @HostListener('mouseenter')
   mousseIn() {
-    this.htmlElement.nativeElement.style.textDecoration = 'underline'
+    this.htmlElement.nativeElement.style.textDecoration = 'underline';
+    this.htmlElement.nativeElement.style.textDecorationColor = this.color;
   }
 
   @HostListener('mouseleave')
   mousseOut() {
-    this.htmlElement.nativeElement.style.textDecoration = 'green wavy underline'
+    this.htmlElement.nativeElement.style.textDecoration = 'none';
+    this.htmlElement.nativeElement.style.textDecorationColor = 'none';
   }
 }
