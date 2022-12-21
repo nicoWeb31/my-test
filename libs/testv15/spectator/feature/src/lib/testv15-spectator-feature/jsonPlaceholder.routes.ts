@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { Testv15SpectatorFeatureComponent } from './testv15-spectator-feature.component';
 
 export const SPECTATOR_PL_ROUTES: Routes = [
   {
     path: '',
-    component: Testv15SpectatorFeatureComponent,
-
+    loadComponent: () =>
+      import('./testv15-spectator-feature.component').then(
+        (c) => c.Testv15SpectatorFeatureComponent
+      ),
   },
 ];

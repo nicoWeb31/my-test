@@ -11,4 +11,9 @@ export class UderlineDirective {
   mousseIn() {
     this.htmlElement.nativeElement.style.textDecoration = 'underline'
   }
+
+  @HostListener('mouseleave')
+  mousseOut() {
+    this.htmlElement.nativeElement.style.textDecoration = 'green wavy underline'
+  }
 }
