@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import {
+  // JsonPlaceholderService,
   myToken,
   PostsEffects,
   postsReducer,
@@ -22,7 +23,8 @@ export const JSON_PL_ROUTES: Routes = [
     providers: [
       provideState(POSTS_STATE_NAME, postsReducer),
       provideEffects(PostsEffects),
-      { provide: myToken, useValue: someTest }
+      { provide: myToken, useValue: someTest },
+      // JsonPlaceholderService,
     ],
   },
 ];

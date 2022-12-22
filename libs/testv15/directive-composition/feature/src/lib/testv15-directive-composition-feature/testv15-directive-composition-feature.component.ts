@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { doesServiceImplementsOnDestroy } from '@ngneat/spectator';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit
+} from '@angular/core';
 import { EventDirective } from '../directives/event.directive';
 import { MouseEnterDirective } from '../directives/mouse-enter.directive';
 
@@ -11,31 +15,24 @@ import { MouseEnterDirective } from '../directives/mouse-enter.directive';
   standalone: true,
   imports: [CommonModule, MouseEnterDirective],
   // hostDirectives:[MouseEnterDirective],//its possible to call directly here
-  hostDirectives:[EventDirective],
+  hostDirectives: [EventDirective],
   template: `
-    <div
-      myTestMouseEnter
-      underlineCol="black"
-      (boldHover)="hoverHandler()"
-
-    >
+    <div myTestMouseEnter underlineCol="black" (boldHover)="hoverHandler()">
       test directive
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Testv15DirectiveCompositionFeatureComponent implements OnInit {
+  eventDirective = inject(EventDirective);
+
   hoverHandler() {
     console.log('hover ;)');
   }
 
-
-  eventDirective = inject(EventDirective)
-
   ngOnInit(): void {
     this.eventDirective.data = {
       age: 12,
-      
-      }
+    };
   }
 }

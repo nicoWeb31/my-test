@@ -1,16 +1,15 @@
 import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import {
-  JsonPlaceholderService,
   postsActions,
-  postsSelector, Testv15JsonPlaceholderDataAccessModule
+  postsSelector
 } from '@my-test/testv15/json-placeholder/data-access';
 import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'my-test-testv15-json-placeholder-feature',
   standalone: true,
-  imports: [NgFor, AsyncPipe, JsonPipe, Testv15JsonPlaceholderDataAccessModule],
+  imports: [NgFor, AsyncPipe, JsonPipe],
   template: `
     <p>testv15-json-placeholder-feature works!</p>
     <!-- {{ posts$ | async | json }} -->
@@ -21,7 +20,7 @@ import { Store } from '@ngrx/store';
 })
 export class  Testv15JsonPlaceholderFeatureComponent implements OnInit {
   @Input() message!: string;
-  placeHolderService = inject(JsonPlaceholderService);
+  // placeHolderService = inject(JsonPlaceholderService);
   store = inject(Store);
 
   posts$ = this.store.select(postsSelector);
