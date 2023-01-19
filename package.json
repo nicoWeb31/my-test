@@ -39,7 +39,7 @@
     "@nrwl/nest": "^15.4.5",
     "jest-auto-spies": "^1.6.10",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.0.0",
+    "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
