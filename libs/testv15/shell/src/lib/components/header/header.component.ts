@@ -12,6 +12,7 @@ import { RouterLinkWithHref } from '@angular/router';
       <a [routerLink]="['cat-fact']">cat fact</a>
       <a [routerLink]="['spectator']">spectator</a>
       <a [routerLink]="['directiveComp']">directive composition</a>
+      <a [routerLink]="['rxjs']">rxjs</a>
     </header>
   `,
   styles: [],

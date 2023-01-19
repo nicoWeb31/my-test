@@ -32,6 +32,13 @@ export const SHELL_ROUTES: Routes = [
             (c) => c.Testv15DirectiveCompositionFeatureComponent
           ),
       },
+      {
+        path: 'rxjs',
+        loadChildren: () =>
+          import('@my-test/testv15/obs-defis/feature').then(
+            (r) => r.RXJS_ROUTES
+          ),
+      },
     ],
   },
 ];
