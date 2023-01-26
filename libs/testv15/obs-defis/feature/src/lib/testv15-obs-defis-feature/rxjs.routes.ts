@@ -20,7 +20,8 @@ export const RXJS_ROUTES: Routes = [
       },
       {
         path: 'd-3',
-        component: D3Component,
+        loadComponent: () =>
+          import('./components/d3/d3.component').then((c) => c.D3Component),
       },
       {
         path: 'd-4',

@@ -5,7 +5,12 @@ import { CommonModule } from '@angular/common';
   selector: 'my-test-d3',
   standalone: true,
   imports: [CommonModule],
-  template: ` <p>d3 works!</p> `,
+  template: `
+  <div>
+    <h2>Défis 3</h2>
+    Show error message for 5 seconds if login has failed.
+  </div>
+  `,
   styles: [],
 })
 export class D3Component {}

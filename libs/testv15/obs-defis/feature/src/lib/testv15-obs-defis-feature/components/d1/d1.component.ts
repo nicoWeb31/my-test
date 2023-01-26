@@ -8,7 +8,8 @@ import { FocusService, Testv15ObsDefisDataAccessModule } from '@my-test/testv15/
   imports: [CommonModule, Testv15ObsDefisDataAccessModule],
   template: `
     <div>
-      <p>Create an Observable to track focus in a section of the page.</p>
+      <h2 class="text-center m-6">Défis 1</h2>
+      <p class="p-3 ">Create an Observable to track focus in a section of the page.</p>
     </div>
   `,
   styles: [],

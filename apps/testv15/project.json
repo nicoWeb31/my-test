@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/testv15/src",
   "prefix": "my-test",
+
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -14,7 +15,15 @@
         "main": "apps/testv15/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/testv15/tsconfig.app.json",
-        "assets": ["apps/testv15/src/favicon.ico", "apps/testv15/src/assets"],
+        "assets": [
+          "apps/testv15/src/favicon.ico",
+          "apps/testv15/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/shared-assets",
+            "output": "assets"
+          }
+        ],
         "styles": ["apps/testv15/src/styles.css"],
         "scripts": []
       },
