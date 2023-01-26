@@ -6,8 +6,8 @@ import { NgOptimizedImage } from '@angular/common'
   standalone: true,
   imports: [NgOptimizedImage],
   template: `
-  <img [src]="'assets/images-def/v.png'" />
-  <img [ngSrc]="'https://picsum.photos/200/300'" />
+  <img class='m-auto' [ngSrc]="'assets/images-def/v.png'"  width="500" height="300" />
+  <!-- <img [ngSrc]="'https://picsum.photos/200/300'" width="500" height="500" /> -->
   `,
   styles: [],
 })
