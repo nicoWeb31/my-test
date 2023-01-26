@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Testv15ObsDefisDataAccessModule } from '@my-test/testv15/obs-defis/data-access';
-import { FocusService } from 'libs/testv15/obs-defis/data-access/src/lib/service/focus.service';
+import { FocusService, Testv15ObsDefisDataAccessModule } from '@my-test/testv15/obs-defis/data-access';
 
 @Component({
   selector: 'my-test-d1',
@@ -21,6 +20,6 @@ export class D1Component implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.focusService.focus(this.ref).subscribe()
+    this.focusService.focus(this.ref).subscribe();
   }
 }

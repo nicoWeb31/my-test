@@ -15,7 +15,8 @@ export const RXJS_ROUTES: Routes = [
       },
       {
         path: 'd-2',
-        loadChildren: ()=> import('./components/d2/d2.component').then(c=> c.D2Component),
+        loadComponent: () =>
+          import('./components/d2/d2.component').then((c) => c.D2Component),
       },
       {
         path: 'd-3',
