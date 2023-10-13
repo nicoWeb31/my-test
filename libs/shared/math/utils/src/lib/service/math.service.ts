@@ -4,6 +4,7 @@ import { Inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MathService {
+
   constructor(@Inject('numFromCaller') private numFromCaller: number) {}
 
   addFromCaller(n: number) {

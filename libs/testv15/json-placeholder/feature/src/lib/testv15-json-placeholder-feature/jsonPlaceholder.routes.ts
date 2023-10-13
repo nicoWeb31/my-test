@@ -10,6 +10,7 @@ import {
 import { provideEffects } from '@ngrx/effects';
 import { provideState } from '@ngrx/store';
 import { Testv15JsonPlaceholderFeatureComponent } from './testv15-json-placeholder-feature.component';
+import { MathService } from '@my-test/shared/math/utils';
 
 export const JSON_PL_ROUTES: Routes = [
   {
@@ -24,6 +25,7 @@ export const JSON_PL_ROUTES: Routes = [
       provideState(POSTS_STATE_NAME, postsReducer),
       provideEffects(PostsEffects),
       { provide: myToken, useValue: someTest },
+      MathService, { provide: 'numFromCaller', useValue: 150 }
       // JsonPlaceholderService,
     ],
   },
