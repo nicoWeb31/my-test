@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Directive, HostListener, inject, NgZone } from '@angular/core';
-import { table } from 'console';
 import { take } from 'rxjs';
 
 @Directive({
