@@ -39,6 +39,13 @@ export const SHELL_ROUTES: Routes = [
             (r) => r.RXJS_ROUTES
           ),
       },
+      {
+        path: 'v17',
+        loadComponent: () =>
+          import('@my-test/testv15/templatev17').then(
+            (c) => c.Templatev17Component
+          ),
+      },
     ],
   },
 ];
