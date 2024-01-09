@@ -44,7 +44,8 @@
         "libs/testv15/spectator/feature/src/index.ts"
       ],
       "@my-test/testv15/templatev17": ["libs/testv15/templatev17/src/index.ts"],
-      "@my-test/ts-playground": ["libs/ts-playground/src/index.ts"]
+      "@my-test/ts-playground": ["libs/ts-playground/src/index.ts"],
+      "@nicoweb311/test": ["libs/publishable/test/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
