@@ -13,13 +13,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/testv15/json-placeholder/data-access/**/*.ts",
-          "libs/testv15/json-placeholder/data-access/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
   },
   "tags": ["scope:testv15", "type:data-access"]

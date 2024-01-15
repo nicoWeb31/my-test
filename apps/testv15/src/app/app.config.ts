@@ -11,6 +11,6 @@ export const appConfig: ApplicationConfig = {
     provideEffects([]),
     provideHttpClient(),
     provideStore({}),
-    provideStoreDevtools(),
+    provideStoreDevtools({connectInZone: true}),
   ],
 };

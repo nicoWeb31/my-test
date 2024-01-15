@@ -14,13 +14,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/testv15/spectator/feature/**/*.ts",
-          "libs/testv15/spectator/feature/**/*.html"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   },
   "tags": ["scope:testv15", "type:feature"]
