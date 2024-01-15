@@ -59,6 +59,7 @@
     "@nx/jest": "17.2.8",
     "@nx/js": "17.2.8",
     "@nx/vite": "17.2.8",
+    "@nx/web": "17.2.8",
     "@nx/workspace": "17.2.8",
     "@schematics/angular": "17.0.0",
     "@swc-node/register": "~1.6.7",
@@ -69,7 +70,7 @@
     "@typescript-eslint/parser": "6.10.0",
     "@vitest/ui": "0.34.7",
     "autoprefixer": "^10.4.0",
-    "cypress": "^12.2.0",
+    "cypress": "^13.0.0",
     "eslint": "8.48.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-cypress": "2.15.1",
@@ -95,4 +96,3 @@
     "vitest": "0.34.6"
   }
 }
-
